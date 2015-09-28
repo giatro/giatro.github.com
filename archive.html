@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% for post in site.posts %}
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate != date %}
+        {% unless forloop.first %}
+    </ul>
+</section>
+        {% endunless %}
+<section>
+    <header>
+        <h1 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h1>
+    </header>
+    <ul class="simplelist">{% assign date = currentdate %}
+    {% endif %}
+        <li><time>{{ post.date | date: "%b %d" }}</time>» <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+    {% if forloop.last %}
+    </ul>
+</section>
+    {% endif %}
+{% endfor %}

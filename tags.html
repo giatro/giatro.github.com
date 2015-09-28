@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% for tag in site.tags %}
+<section>
+	<header>
+		<h1 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h1>
+	</header>
+	<ul class="simplelist">
+		{% assign pages_list = tag[1] %}
+		{% for post in pages_list %}
+			<li><time>{{ post.date | date: "%b %d" }}</time>: <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+		{% assign pages_list = nil %}
+	</ul>
+</section>
+{% endfor %}

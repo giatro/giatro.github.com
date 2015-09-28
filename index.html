@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% for post in site.posts %}
+{% unless forloop.first %}
+<hr>
+{% endunless %}
+<article>
+    <header>
+        <h1>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h1>
+        <time>{{ post.date | date: "%b %-d, %Y %H:%m" }}</time>
+    </header>
+    <div class="excerpt">
+		{{ post.excerpt }}
+    </div>
+</article>
+{% endfor %}

@@ -1,0 +1,76 @@
+<header>
+    <nav>
+        <div><a id="G" href="/index.html">G</a></div>
+        <ul>
+            {% if page.path == "index.html" %}
+            <li>
+                home
+            </li>
+            {% else %}
+            <li>
+                <a href="/index.html">home</a>
+            </li>
+            {% endif %} {% if page.path == "archive.html" %}
+            <li>
+                archive
+            </li>
+            {% else %}
+            <li>
+                <a href="/archive.html">archive</a>
+            </li>
+            {% endif %} {% if page.path == "category.html" %}
+            <li>
+                category
+            </li>
+            {% else %}
+            <li>
+                <a href="/category.html">category</a>
+            </li>
+            {% endif %} {% if page.path == "tags.html" %}
+            <li>
+                tags
+            </li>
+            {% else %}
+            <li>
+                <a href="/tags.html">tags</a>
+            </li>
+            {% endif %} {% if page.path == "about.html" %}
+            <li>
+                about
+            </li>
+            {% else %}
+            <li>
+                <a href="/about.html">about</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div id="motto"> {{ site.motto }} </div>
+    <ul id="social-links">
+        <li>
+            <a href="https://github.com/{{ site.github_username }}" title="Github">
+                <i class="fa fa-github fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+                <i class="fa fa-twitter fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/{{ site.facebook_username }}" title="Twitter">
+                <i class="fa fa-facebook-official fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://plus.google.com/+{{ site.googleplus_username }}" title="Twitter">
+                <i class="fa fa-google-plus fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="/feed.xml" title="RSS">
+                <i class="fa fa-rss fa-2x"></i>
+            </a>
+        </li>
+    </ul>
+</header>
