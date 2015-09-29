@@ -1,47 +1,27 @@
 <header>
     <nav>
-        <div><a id="G" href="/index.html">G</a></div>
         <ul>
             {% if page.path == "index.html" %}
-            <li>
-                home
-            </li>
+            <li><span id="G">G</span></li>
             {% else %}
-            <li>
-                <a href="/index.html">home</a>
-            </li>
+            <li><a id="G" href="/index.html">G</a></li>
+            {% endif %}
+            {% if page.path == "index.html" %}
+            <li>home</li>
+            {% else %}
+            <li><a href="/index.html">home</a></li>
             {% endif %} {% if page.path == "archive.html" %}
-            <li>
-                archive
-            </li>
+            <li>archive</li>
             {% else %}
-            <li>
-                <a href="/archive.html">archive</a>
-            </li>
+            <li><a href="/archive.html">archive</a></li>
             {% endif %} {% if page.path == "category.html" %}
-            <li>
-                category
-            </li>
+            <li>category</li>
             {% else %}
-            <li>
-                <a href="/category.html">category</a>
-            </li>
+            <li><a href="/category.html">category</a></li>
             {% endif %} {% if page.path == "tags.html" %}
-            <li>
-                tags
-            </li>
+            <li>tags</li>
             {% else %}
-            <li>
-                <a href="/tags.html">tags</a>
-            </li>
-            {% endif %} {% if page.path == "about.html" %}
-            <li>
-                about
-            </li>
-            {% else %}
-            <li>
-                <a href="/about.html">about</a>
-            </li>
+            <li><a href="/tags.html">tags</a></li>
             {% endif %}
         </ul>
     </nav>
@@ -50,6 +30,11 @@
         <li>
             <a href="https://github.com/{{ site.github_username }}" title="Github">
                 <i class="fa fa-github fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/{{ site.linkedin_id }}" title="LindekIn">
+                <i class="fa fa-linkedin fa-2x"></i>
             </a>
         </li>
         <li>

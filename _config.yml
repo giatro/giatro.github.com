@@ -1,6 +1,6 @@
 # Site settings
-title: giatro
-motto: "Gianluca Troiani: technologist, writer, engineer, developer, hacker"
+title: giatro.me
+motto: "Gianluca Troiani: technologist, writer, engineer, developer, maker. On my work, hacks and tips."
 email: gianluca.troiani@gmail.com
 description: "Gianluca Troiani's personal site: my work, hacks and tips"
 baseurl: "" # the subpath of your site, e.g. /blog/
@@ -10,6 +10,8 @@ twitter_username: giatro
 github_username:  giatro
 facebook_username: gianluca.troiani.12
 googleplus_username: GianlucaTroiani
+linkedin_id: pub/gianluca-troiani/33/9a9/415
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
