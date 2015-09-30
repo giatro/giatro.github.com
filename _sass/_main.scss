@@ -249,3 +249,11 @@ footer {
 .headline {
 	font:$font_headline;
 }
+
+pre {
+	font-size: 1em;
+	font-family: monospace;
+	padding: 1.5rem;
+	line-height: 1.5;
+	background-color: #EEEEEE;
+}
