@@ -7,13 +7,23 @@ tags: [raspberry pi, influxdb, grafana]
 author: gianluca troiani
 ---
 
+Many Internet of things projects are based on the Raspberry Pi and many of these need to save time series data on a database and need an interface to view stored data.
+
+InfluxDB and Grafana are the the perfect tools to do the job.
+
 ![](/images/influxgrafanaraspi.png)
+
+<!--more-->
 
 ## What is a Raspberry Pi?
 
-The Raspberry Pi is a low cost, credit-card sized computer that plugs into a computer monitor or TV, and uses a standard keyboard and mouse. It is a capable little device that enables people of all ages to explore computing, and to learn how to program in languages like Scratch and Python. It’s capable of doing everything you’d expect a desktop computer to do, from browsing the internet and playing high-definition video, to making spreadsheets, word-processing, and playing games.
+The Raspberry Pi is a low cost, credit-card sized computer capable of doing everything you’d expect a desktop computer to; what’s more, the Raspberry Pi has the ability to interact with the outside world using the 0.1" spaced 40-pin GPIO header.
 
-What’s more, the Raspberry Pi  has the ability to interact with the outside world, and has been used in a wide array of digital maker projects, from music machines and parent detectors to weather stations and tweeting birdhouses with infra-red cameras. We want to see the Raspberry Pi being used by kids all over the world to learn to program and understand how computers work. [ [1][1] ]
+Given the size and the GPIO access (27 GPIO, UART, I2C, SPI as well as 3.3 and 5V sources), the Raspberry Pi has been used as embedded computer in a wide array of digital maker and internet of things, projects. [ [1][1] ].
+
+The Raspberry Pi model used in this guide is [Raspberry Pi 2 Model B][pi2b] with [Raspbian][raspbian].
+
+![Raspberry Pi 2 Model B](/images/pi2b.jpg) [Image courtesy of Adafruit][pi2bimgcc], ([CC BY-SA 3.0][cc]).
 
 ## What is InfluxDB?
 
@@ -34,6 +44,8 @@ Key Features: [ [2][2] ]
 * Store and query hundreds of thousands of series, filtering by tags
 * Merge multiple series together
 
+![Example of InfluxDD Admin page](/images/InfluxDBAdmin.png)
+
 InfluxDB requires [Go 1.5][go] or greater.
 
 ## What is Grafana?
@@ -43,6 +55,8 @@ Grafana is a leading open source application for visualizing large-scale measure
 It provides a powerful and elegant way to create, share, and explore data and dashboards from your disparate metric databases, either with your team or the world.
 
 Grafana is most commonly used for Internet infrastructure and application analytics, but many use it in other domains including industrial sensors, home automation, weather, and process control. [ [3][3] ]
+
+![Example of a Grafana dashboard](/images/grafanaexample.png)
 
 Grafana requires [Go 1.4][go] and [NodeJS][nodejs].
 
@@ -154,6 +168,11 @@ $GOPATH/bin/grafana-server
 [1]: https://www.raspberrypi.org/help/what-is-a-raspberry-pi/
 [2]: https://influxdb.com/docs/v0.9/introduction/overview.html
 [3]: http://docs.grafana.org/
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+[pi2b]: https://www.raspberrypi.org/products/raspberry-pi-2-model-b/
+[pi2bimgcc]: https://learn.adafruit.com/assets/22828
+[raspbian]: https://www.raspberrypi.org/downloads/raspbian/
+[raspiiot]: https://www.raspberrypi.org/blog/tag/internet-of-things/
 [go]: https://golang.org/
 [gvm]: https://github.com/moovweb/gvm
 [nodejs]: https://nodejs.org/
