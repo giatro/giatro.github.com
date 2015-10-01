@@ -7,10 +7,13 @@ ul, ol, dl, figure,
 }
 
 ul,ol {
-	margint-left: 0;
+	margin-left: 1em;
 	padding: 0;
+	@media screen and (min-width: $break-large-tablet) {
+		margin-left: 0;
+	}
 	li {
-		margint-left: 0;
+		margin-left: 0;
 	}
 }
 
@@ -27,27 +30,32 @@ img {
 a {
 	transition: all 0.15s linear 0s;
 	&:link, &:visited {
-		background: #FDFDFD;
-		color: $primary_dark_color;
+		background: $white;
+		color: $darkgrey;
 	}
 	&:hover, &:focus, &:active {
-		background: #FDFDFD;
-		color: $primary_darken_color;
+		background: $white;
+		color: $black;
 	}
 }
 body{
-	background: #FDFDFD;
+	background: $white;
 	margin: 0;
 	padding: 0;
-	color: $primary_dark_color;
+	color: $black;
 	font: $font_body_1_device;
 	@media screen and (min-width: $break-large-tablet) {
 		font: $font_body_1;
 	}
 	> header {
+		position: relative;
+		z-index: 20;
 		background: $primary_bg_color;
 		color: $primary_fg_color;
 		padding: $spacing-unit/2 0;
+		@media screen and (min-width: $break-large-tablet) {
+			padding: $spacing-unit 0;
+		}
 		margin: 0 0 $spacing-unit 0;
 		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 		li {
@@ -57,9 +65,10 @@ body{
 			li:first-child {
 				display: block;
 				margin-bottom: $spacing-unit/2;
+				margin-right: 0;
 				@media screen and (min-width: $break-large-tablet + 1px) {
-					display: inline-block;
-					margin-bottom: 0;
+					// display: inline-block;
+					// margin-bottom: 0;
 				}
 			}
 		}
@@ -78,7 +87,7 @@ body{
 		}
 		nav {
 			margin: 0 auto;
-			padding: 0 $spacing-unit;
+			padding: 0 $spacing-unit/2;
 			box-sizing: border-box;
 			@media screen and (min-width: $break-large-tablet) {
 				padding: 0 $spacing-unit;
@@ -90,7 +99,7 @@ body{
 		}
 		#motto {
 			margin: $spacing-unit/2 auto;
-			padding: 0 $spacing-unit;
+			padding: 0 $spacing-unit/2;
 			box-sizing: border-box;
 			@media screen and (min-width: $break-large-tablet) {
 				padding: 0 $spacing-unit;
@@ -99,7 +108,7 @@ body{
 		}
 		#social-links {
 			margin: 0 auto;
-			padding: 0 $spacing-unit;
+			padding: 0 $spacing-unit/2;
 			box-sizing: border-box;
 			@media screen and (min-width: $break-large-tablet) {
 				padding: 0 $spacing-unit;
@@ -123,8 +132,11 @@ section {
 		}
 	}
 }
-time,.post-meta {
-	color: $primary_light_color;
+.post-meta {
+	color: $gray;
+}
+time {
+	@extend .post-meta;
 }
 ul.simplelist {
 	// margin: $spacing-unit/2 0;
@@ -163,11 +175,11 @@ img.userphoto {
 }
 hr {
 	border: none;
-	border-top:1px solid $primary_lighten_color;
+	border-top:1px solid $lightgrey;
 	margin: $spacing-unit auto;
 	padding: 0;
 	@media screen and (min-width: $break-large-tablet) {
-		max-width: $break-large-tablet - 40px;
+		max-width: $break-large-tablet - 60px;
 	}
 }
 nav {
@@ -196,23 +208,49 @@ nav {
 }
 #G{
 	text-decoration: none;
+	background: $white;
+	color: $primary_bg_color;
+	&[href] {
+		&:link,&:visited {
+			background: $primary_lighten_color;
+			color: $primary_bg_color;
+		}
+		&:hover,&:focus,&:active {
+			background: $primary_light_color;
+			color: $primary_bg_color;
+		}		
+	}
 	// color: #FFF;
 	display:block;
 	height: 1.2em;
 	width: 1.2em;
-	border: 0.1em solid;
-	font-size: 7rem;
-	line-height: 1;
+	// border: 0.1em solid;
+	border: none;
+	font-size: 9rem;
+	line-height: 0.9em;
 	// line-height: 1.5;
 	// text-align: right;
 	// font-weight: 100;
 	// margin-bottom: 2rem;
 	@media screen and (min-width: $break-large-tablet + 1px) {
-		font-size: 4rem;
+		font-size: 4.667rem;
 	}
 	// @media screen and (width: $break-large-tablet) and (orientation: portrait) {
 	// 	font-size: 7rem;
 	// }
+}
+#Gg {
+	display: none;
+	@media screen and (min-width: $break-large-tablet + 200px) {
+		display: block;
+	}
+	@extend #G;
+	position: fixed;
+	z-index: 10;
+	top: $spacing-unit/2;
+	left: $spacing-unit/2;
+	color: $white !important;
+	background: $primary_bg_color !important;
 }
 footer {
 	background: $primary_bg_color;
@@ -222,8 +260,8 @@ footer {
 	img {
 		display: block;
 		border-radius: 100%;
-		width: 8rem;
-		border: .3rem solid $primary_fg_color;
+		width: 8.4rem;
+		border: .3rem solid $primary_lighten_color;
 		float: left;
 	}
 	a {
@@ -254,6 +292,6 @@ pre {
 	font-size: 1em;
 	font-family: monospace;
 	padding: 1.5rem;
-	line-height: 1.5;
-	background-color: #EEEEEE;
+	line-height: 1.7;
+	background-color: $lightgrey;
 }
