@@ -9,6 +9,8 @@ author: gianluca troiani
 
 È ormai giunto il tempo di informare (leggasi spammare) e visto che [Gabriele Gigliotti][ggblog] ha scritto un [bel post][ggblogpost] sul suo blog e visto che io sono pigro [vi rimando direttamente al suo blog][ggblogpost].
 
+<!--more-->
+
 [![La famiglia si allarga](/images/html5-il-markup-e-le-api.jpg)][schedadellibro]
 
 ISBN: 9788850333394, 288 pagine, [indice del libro][indice], [introduzione][introduzione].
