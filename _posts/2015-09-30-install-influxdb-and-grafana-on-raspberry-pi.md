@@ -7,7 +7,7 @@ tags: [raspberry pi, influxdb, grafana]
 author: gianluca troiani
 ---
 
-http://stackoverflow.com/questions/24304746/gvm-setting-gopath-in-ubuntu-14-04
+![](/images/influxgrafanaraspi.png)
 
 ## What is a Raspberry Pi?
 
@@ -42,7 +42,7 @@ Grafana is a leading open source application for visualizing large-scale measure
 
 It provides a powerful and elegant way to create, share, and explore data and dashboards from your disparate metric databases, either with your team or the world.
 
-Grafana is most commonly used for Internet infrastructure and application analytics, but many use it in other domains including industrial sensors, home automation, weather, and process control.
+Grafana is most commonly used for Internet infrastructure and application analytics, but many use it in other domains including industrial sensors, home automation, weather, and process control. [ [3][3] ]
 
 Grafana requires [Go 1.4][go] and [NodeJS][nodejs].
 
@@ -50,9 +50,9 @@ Grafana requires [Go 1.4][go] and [NodeJS][nodejs].
 
 ### Install Go
 
-[GVM][gvm] provides an interface to manage Go versions.
-
 InfluxDB requires Go 1.5 but to install Go 1.5 you need Go 1.4 (see [this issue][issue155]).
+
+[GVM][gvm] provides an interface to manage Go versions.
 
 {% highlight sh %}
 
@@ -72,6 +72,8 @@ gvm use go1.5 --default
 
 ### Install NodeJS
 
+Grafana requires [NodeJS][nodejs] to build the front-end assets using [Grunt][grunt].
+
 [Adafruit][adafruit] has a good [guide about NodeJS on Raspberry Pi][adafruitnode].
 
 {% highlight sh %}
@@ -80,18 +82,26 @@ gvm use go1.5 --default
 curl -sLS https://apt.adafruit.com/add | sudo bash
 # install node.js using apt-get
 sudo apt-get install node
-# check the installed version of node.js
-node -v
+
+{% endhighlight %}
+
+### Set up environment
+
+{% highlight sh %}
+
+mkdir $HOME/gocodez
+echo "export GOPATH=$HOME/gocodez" >> $HOME/.bashrc
+source $HOME/.bashrc
 
 {% endhighlight %}
 
 ## Install InfluxDB
 
+Based on "[Contributing to InfluxDB][influxfromsource]".
+
 {% highlight sh %}
 
 # getting the source
-mkdir $HOME/gocodez
-export GOPATH=$HOME/gocodez
 go get github.com/influxdb/influxdb
 # install
 cd $GOPATH/src/github.com/influxdb
@@ -104,20 +114,52 @@ $GOPATH/bin/influxd
 
 ## Install Grafana
 
-...
+Based on "[Building Grafana from source][grafanafromsource]".
 
+{% highlight sh %}
+
+# getting the source
+go get github.com/grafana/grafana
+# building the backend
+cd $GOPATH/src/github.com/grafana/grafana
+go run build.go setup
+$GOPATH/bin/godep restore
+go run build.go build
+# build the front-end assets
+npm install
+sudo npm install -g grunt-cli
+grunt
+# start grafana
+$GOPATH/bin/grafana-server
+{% endhighlight %}
+
+## Start Your Engines!
+
+{% highlight sh %}
+
+# start influxdb
+$GOPATH/bin/influxd
+# start grafana
+$GOPATH/bin/grafana-server
+
+{% endhighlight %}
 
 ## External links
 
-1. [https://www.raspberrypi.org/][1]
-2. [https://influxdb.com/docs/v0.9/introduction/overview.html][2]
+1. [What is a Raspberry Pi?][1]
+2. [Overview \| InfluxDB][2]
+3. [About Grafana][3]
 
 
-[1]: https://www.raspberrypi.org/
+[1]: https://www.raspberrypi.org/help/what-is-a-raspberry-pi/
 [2]: https://influxdb.com/docs/v0.9/introduction/overview.html
+[3]: http://docs.grafana.org/
 [go]: https://golang.org/
 [gvm]: https://github.com/moovweb/gvm
 [nodejs]: https://nodejs.org/
+[grunt]: http://gruntjs.com/
 [adafruit]: https://www.adafruit.com/
 [adafruitnode]: https://learn.adafruit.com/node-embedded-development/installing-node-dot-js
 [issue155]: https://github.com/moovweb/gvm/issues/155
+[influxfromsource]: https://github.com/influxdb/influxdb/blob/master/CONTRIBUTING.md
+[grafanafromsource]:http://docs.grafana.org/project/building_from_source/
