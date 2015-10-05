@@ -9,7 +9,7 @@ layout: default
 	<ul class="simplelist">
 		{% assign pages_list = tag[1] %}
 		{% for post in pages_list %}
-			<li><time>{{ post.date | date: "%b %d" }}</time>: <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+			<li><time>{{ post.date | date: "%b %-d, %Y" }}</time>: <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
 		{% endfor %}
 		{% assign pages_list = nil %}
 	</ul>

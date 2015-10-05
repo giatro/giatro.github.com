@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Install InfluxDB and Grafana on Raspberry Pi"
-date:   2015-09-30 14:55:00
-categories: [diy]
+date:   2015-09-30
 tags: [raspberry pi, influxdb, grafana]
 author: gianluca troiani
 ---

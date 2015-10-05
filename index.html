@@ -10,7 +10,10 @@ layout: default
         <h1>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h1>
-        <p><time>{{ post.date | date: "%b %-d, %Y %H:%m" }}</time></p>
+        <p>
+        	<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+        	{% assign tagsize = post.tags.size %}{% if tagsize != 0 %} • on {% for tag in post.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&comma; {% endunless %}{% endfor %}{% endif %}
+        </p>
     </header>
     <div class="excerpt">
 		{{ post.excerpt }}

@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "HTML5 il markup e le API"
-date:   2015-06-14 17:59:00
-categories: [updates]
+date:   2015-06-14
 tags: [books, html]
 author: gianluca troiani
 ---

@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "La famiglia si allarga"
-date:   2015-06-17 17:21:00
-categories: [updates]
+date:   2015-06-17
 tags: [books, html]
 author: gianluca troiani
 ---
