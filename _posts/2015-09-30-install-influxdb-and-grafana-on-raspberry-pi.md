@@ -6,7 +6,7 @@ tags: [raspberry pi, influxdb, grafana]
 author: gianluca troiani
 ---
 
-Many Internet of things projects are based on the Raspberry Pi and many of these need to save time series data on a database and need an interface to view stored data.
+Many Internet of things projects based on the Raspberry Pi need to save time series data on a database and need an interface to view stored data.
 
 InfluxDB and Grafana are the the perfect tools to do the job.
 
@@ -18,7 +18,7 @@ InfluxDB and Grafana are the the perfect tools to do the job.
 
 The Raspberry Pi is a low cost, credit-card sized computer capable of doing everything you’d expect a desktop computer to; what’s more, the Raspberry Pi has the ability to interact with the outside world using the 0.1" spaced 40-pin GPIO header.
 
-Given the size and the GPIO access (27 GPIO, UART, I2C, SPI as well as 3.3 and 5V sources), the Raspberry Pi has been used as embedded computer in a wide array of digital maker and internet of things, projects. [ [1][1] ].
+Given the size and the GPIO access (27 GPIO, UART, I2C, SPI as well as 3.3 and 5V sources), the Raspberry Pi has been used as embedded computer in a wide array of digital maker and internet of things, projects. [[ 1 ][1]].
 
 The Raspberry Pi model used in this guide is [Raspberry Pi 2 Model B][pi2b] with [Raspbian][raspbian].
 
@@ -28,9 +28,9 @@ The Raspberry Pi model used in this guide is [Raspberry Pi 2 Model B][pi2b] with
 
 InfluxDB is a time series, metrics, and analytics database. It’s written in Go and has no external dependencies.
 
-InfluxDB is targeted at use cases for DevOps, metrics, sensor data, and real-time analytics. [ [2][2] ]
+InfluxDB is targeted at use cases for DevOps, metrics, sensor data, and real-time analytics. [[ 2 ][2]]
 
-Key Features: [ [2][2] ]
+Key Features: [[ 2 ][2]]
 
 * SQL-like query language
 * HTTP(S) API for data ingestion and queries
@@ -53,7 +53,7 @@ Grafana is a leading open source application for visualizing large-scale measure
 
 It provides a powerful and elegant way to create, share, and explore data and dashboards from your disparate metric databases, either with your team or the world.
 
-Grafana is most commonly used for Internet infrastructure and application analytics, but many use it in other domains including industrial sensors, home automation, weather, and process control. [ [3][3] ]
+Grafana is most commonly used for Internet infrastructure and application analytics, but many use it in other domains including industrial sensors, home automation, weather, and process control. [[ 3 ][3]]
 
 ![Example of a Grafana dashboard](/images/grafanaexample.png)
 
@@ -73,7 +73,7 @@ InfluxDB requires Go 1.5 but to install Go 1.5 you need Go 1.4 (see [this issue]
 sudo apt-get install curl git mercurial make binutils bison gcc build-essential
 # install gvm
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-# restart your terminal session
+source /home/pi/.gvm/scripts/gvm
 # install go
 gvm install go1.4 
 gvm use go1.4 
@@ -98,7 +98,7 @@ sudo apt-get install node
 
 {% endhighlight %}
 
-### Set up environment
+<!-- ### Set up environment
 
 {% highlight sh %}
 
@@ -106,7 +106,7 @@ mkdir $HOME/gocodez
 echo "export GOPATH=$HOME/gocodez" >> $HOME/.bashrc
 source $HOME/.bashrc
 
-{% endhighlight %}
+{% endhighlight %} -->
 
 ## Install InfluxDB
 
@@ -143,7 +143,7 @@ npm install
 sudo npm install -g grunt-cli
 grunt
 # start grafana
-$GOPATH/bin/grafana-server
+$GOPATH/bin/grafana
 {% endhighlight %}
 
 ## Start Your Engines!
@@ -153,7 +153,8 @@ $GOPATH/bin/grafana-server
 # start influxdb
 $GOPATH/bin/influxd
 # start grafana
-$GOPATH/bin/grafana-server
+cd $GOPATH/src/github.com/grafana/grafana
+$GOPATH/bin/grafana
 
 {% endhighlight %}
 
