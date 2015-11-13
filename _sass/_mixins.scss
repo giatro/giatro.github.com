@@ -8,3 +8,15 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+@mixin sr-only-focusable(){
+	@include sr-only();
+	&:focus,
+	&:active {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+	}
+}

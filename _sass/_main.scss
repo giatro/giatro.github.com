@@ -316,3 +316,7 @@ pre {
 	line-height: 1.7;
 	margin: 0;
 }
+
+#skip-to-content {
+	@include sr-only-focusable();
+}
