@@ -126,7 +126,12 @@ body{
 			@media screen and (min-width: $break-large-tablet) {
 				padding: 0 $spacing-unit;
 				max-width: $break-large-tablet;
-			}		
+			}
+			a {
+				span {
+					@include sr-only();
+				}
+			}
 		}
 	}
 }
