@@ -32,14 +32,12 @@ a {
 	text-decoration: none;
 	border-bottom: 0.3rem solid;
 	&:link, &:visited {
-		background: $white;
-		color: $darkgrey;
-		// border-bottom-color: $darkgrey;
+		background: $body_bg_color;
+		color: $link_color;
 	}
 	&:hover, &:focus, &:active {
-		background: $white;
-		color: $black;
-		// border-bottom-color: $black;
+		background: $body_bg_color;
+		color: $link_active_color;
 	}
 }
 body{
@@ -49,8 +47,8 @@ body{
 	background: $primary_bg_color;
 	color: $primary_fg_color;
 	#content {
-		background: $white;
-		color: $black;
+		background: $body_bg_color;
+		color: $primary_fg_color;
 		padding: $spacing-unit 0;
 		article {
 			&:last-child {
@@ -70,31 +68,16 @@ body{
 		@media screen and (min-width: $break-large-tablet) {
 			padding: $spacing-unit 0;
 		}
-		// margin: 0 0 $spacing-unit 0;
-		// box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 		li {
 			vertical-align: bottom;
 		}
-		ul {
-			li:first-child {
-				display: block;
-				margin-bottom: $spacing-unit/2;
-				margin-right: 0;
-				@media screen and (min-width: $break-large-tablet + 1px) {
-					// display: inline-block;
-					// margin-bottom: 0;
-				}
-			}
-		}
 		a {
 			&:link,&:visited {
-				color: $primary_lighten_color;
-				// color: rgba(255,255,255,0.7);
+				color: $link_color;
 				background: $primary_bg_color;
 			}
 			&:hover,&:focus,&:active {
-				color: $white;
-				// color: rgba(255,255,255,0.8);
+				color: $link_active_color;
 				background: $primary_bg_color;
 			}
 		}
@@ -108,7 +91,6 @@ body{
 			}
 			text-transform: uppercase;
 			font-size: 2rem;
-			// font-weight: 300;
 		}
 		#motto {
 			margin: $spacing-unit/2 auto;
@@ -151,13 +133,12 @@ section {
 	}
 }
 .post-meta {
-	color: $gray;
+	color: $primary_fg_light_color;
 }
 time {
 	@extend .post-meta;
 }
 ul.simplelist {
-	// margin: $spacing-unit/2 0;
 	padding: 0;
 	list-style: none;
 	li {
@@ -193,7 +174,7 @@ img.userphoto {
 }
 hr {
 	border: none;
-	border-top:1px solid $lightgrey;
+	border-top:1px solid $primary_fg_lighten_color;
 	margin: $spacing-unit auto;
 	padding: 0;
 	@media screen and (min-width: $break-large-tablet) {
@@ -210,7 +191,6 @@ nav {
 			display: inline-block;
 			a {
 				text-decoration: none;
-				border-bottom: none;
 			}
 		}
 	}
@@ -226,77 +206,26 @@ nav {
 		}
 	}	
 }
-#G{
-	text-decoration: none;
-	background: $white;
-	color: $primary_bg_color;
-	&[href] {
-		&:link,&:visited {
-			background: $primary_lighten_color;
-			color: $primary_bg_color;
-		}
-		&:hover,&:focus,&:active {
-			background: $white;
-			color: $primary_bg_color;
-		}		
-	}
-	// color: #FFF;
-	display:block;
-	height: 1.2em;
-	width: 1.2em;
-	// border: 0.1em solid;
-	border: none;
-	font-size: 9rem;
-	line-height: 0.9em;
-	// line-height: 1.5;
-	// text-align: right;
-	// font-weight: 100;
-	// margin-bottom: 2rem;
-	@media screen and (min-width: $break-large-tablet + 1px) {
-		font-size: 4.667rem;
-	}
-	// @media screen and (width: $break-large-tablet) and (orientation: portrait) {
-	// 	font-size: 7rem;
-	// }
-}
-#Gg {
-	display: none;
-	@media screen and (min-width: $break-large-tablet + 200px) {
-		display: block;
-	}
-	@extend #G;
-	position: fixed;
-	z-index: 10;
-	top: $spacing-unit/2;
-	left: $spacing-unit/2;
-	color: $white !important;
-	background: $primary_bg_color !important;
-}
 footer {
 	background: $primary_bg_color;
 	color: $primary_fg_color;
 	padding: $spacing-unit 0;
-	// margin: $spacing-unit*2 0 0 0;
 	img {
 		display: block;
 		border-radius: 100%;
 		width: 9.6rem;
-		border: .3rem solid $primary_lighten_color;
+		border: .3rem solid $primary_fg_color;
 		float: left;
 	}
 	a {
 
 		&:link,&:visited {
-			color: $primary_lighten_color;
-			// color: rgba(255,255,255,0.7);
+			color: $link_color;
 			background: $primary_bg_color;
-			// border-bottom-color: $primary_lighten_color;
 		}
 		&:hover,&:focus,&:active {
-			color: $white;
-			// color: rgba(255,255,255,0.8);
+			color: $link_active_color;
 			background: $primary_bg_color;
-			// border-bottom-color: $primary_light_color;
 		}
 	}
 	p {
