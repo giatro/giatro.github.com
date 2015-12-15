@@ -134,6 +134,7 @@ section {
 }
 .post-meta {
 	color: $primary_fg_light_color;
+	margin-top: 3rem;
 }
 time {
 	@extend .post-meta;
