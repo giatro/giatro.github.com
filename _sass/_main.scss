@@ -29,8 +29,8 @@ img {
 }
 a {
 	transition: all 0.15s linear 0s;
-	text-decoration: none;
-	border-bottom: 0.3rem solid;
+	//text-decoration: none;
+	//border-bottom: 0.3rem solid;
 	&:link, &:visited {
 		background: $body_bg_color;
 		color: $link_color;
