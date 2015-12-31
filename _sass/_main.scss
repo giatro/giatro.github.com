@@ -30,7 +30,7 @@ img {
 a {
 	transition: all 0.15s linear 0s;
 	text-decoration: none;
-	border-bottom: 0.3rem solid;
+	border-bottom: 0.3rem solid $link_underline_color;
 	&:link, &:visited {
 		background: $body_bg_color;
 		color: $link_color;
@@ -75,10 +75,12 @@ body{
 			&:link,&:visited {
 				color: $link_color;
 				background: $primary_bg_color;
+				border-color: $link_active_color;
 			}
 			&:hover,&:focus,&:active {
 				color: $link_active_color;
 				background: $primary_bg_color;
+				border-color: $link_active_color;
 			}
 		}
 		nav {
@@ -220,10 +222,12 @@ footer {
 		&:link,&:visited {
 			color: $link_color;
 			background: $primary_bg_color;
+			border-color: $link_active_color;
 		}
 		&:hover,&:focus,&:active {
 			color: $link_active_color;
 			background: $primary_bg_color;
+			border-color: $link_active_color;
 		}
 	}
 	p {
