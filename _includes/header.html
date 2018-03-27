@@ -14,6 +14,10 @@
             <li>tags</li>
             {% else %}
             <li><a href="/tags.html">tags</a></li>
+            {% endif %} {% if page.path == "policy.html" %}
+            <li>Privacy policy</li>
+            {% else %}
+            <li><a href="/policy.html">Privacy policy</a></li>
             {% endif %}
         </ul>
     </nav>
