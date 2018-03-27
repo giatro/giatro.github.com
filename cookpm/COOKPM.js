@@ -103,7 +103,7 @@
 		if(ev && ev.preventDefault) {
 			ev.preventDefault();
 		}
-		window.location.href = '/policy.html';
+		window.location.href = '/privacy-policy';
 	};
 	var showBanner = function(){
 		var x = document.createElement("a");
@@ -159,6 +159,7 @@
 	};
 	_.showBanner = function(){
 		if(_.userAccepted()) {
+			window['ga-disable-UA-18804094-2'] = false;
 			return;
 		}
 		if(document.querySelector("#COOKPM-BANNER")) {
@@ -175,3 +176,4 @@
 		_.showBanner();
 	});
 })();
+window['ga-disable-UA-18804094-2'] = true;
