@@ -103,7 +103,7 @@
 		if(ev && ev.preventDefault) {
 			ev.preventDefault();
 		}
-		window.location.href = '/privacy-policy';
+		window.location.href = '/policy.html';
 	};
 	var showBanner = function(){
 		var x = document.createElement("a");
