@@ -13,25 +13,6 @@
 	var SCROLLTIMEOUT = "scrolltimeout";
 	var PROSEGUI = "prosegui";
 
-	var presets = {};
-		presets["cookie-tecnici-sessione"] = {
-			title: "Attività strettamente necessarie al funzionamento",
-			description: "Questo Sito utilizza Cookie per salvare la sessione dell'Utente e per svolgere altre attività strettamente necessarie al funzionamento dello stesso."
-		};
-		presets["cookie-tecnici-preferenze"] = {
-			title: "Attività di salvataggio delle preferenze e ottimizzazione",
-			description: "Questo Sito utilizza Cookie per salvare le preferenze di navigazione ed ottimizzare l'esperienza di navigazione dell'Utente."
-		};
-		presets["google-analytics"] = {
-			name: "Google Analytics",
-			company: "Google Inc.",
-			description: "Google Analytics è un servizio di analisi web fornito da Google Inc. (“Google”). Google utilizza i Dati Personali raccolti allo scopo di tracciare ed esaminare l’utilizzo di questo Sito, compilare report e condividerli con gli altri servizi sviluppati da Google. Google potrebbe utilizzare i Dati Personali per contestualizzare e personalizzare gli annunci del proprio network pubblicitario.",
-			use: "Cookie e Dati di utilizzo.",
-			where: "USA",
-			policylink: "http://www.google.com/intl/it/policies/privacy/",
-			optoutlink: "http://tools.google.com/dlpage/gaoptout?hl=it"
-		};
-
 	if(window.COOKPM) {
 		return;
 	}
@@ -86,6 +67,7 @@
 		exp = new Date(exp.getTime() + 1000*60*60*24*365); // 365 days
 		document.cookie = "__COOKPM=true; expires=" + exp.toGMTString() + ";";
 		_.hideBanner();
+		location.reload();
 	};
 	var hidePolicy = function(ev){
 		if(ev && ev.preventDefault) {
@@ -159,7 +141,6 @@
 	};
 	_.showBanner = function(){
 		if(_.userAccepted()) {
-			window['ga-disable-UA-18804094-2'] = false;
 			return;
 		}
 		if(document.querySelector("#COOKPM-BANNER")) {
@@ -176,4 +157,3 @@
 		_.showBanner();
 	});
 })();
-window['ga-disable-UA-18804094-2'] = true;
