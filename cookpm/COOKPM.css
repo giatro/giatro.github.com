@@ -1,0 +1,229 @@
+#COOKPM-MODALOVERLAY {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.85);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL {
+  position: absolute;
+  background: #fafafa;
+  top: 4em;
+  bottom: 0em;
+  left: 0em;
+  right: 0em;
+  transition: top 0.5s;
+  padding: 1em 1em 1em 1em;
+  z-index: 10001;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.14), 0 4px 5px 0 rgba(0, 0, 0, 0.098), 0 1px 10px 0 rgba(0, 0, 0, 0.084);
+  overflow: auto;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL.COOKPM-hidden {
+  top: 100%;
+}
+@media (min-width: 640px) {
+  #COOKPM-MODALOVERLAY #COOKPM-MODAL {
+    bottom: 0em;
+    left: 4em;
+    right: 4em;
+  }
+}
+@media (min-width: 800px) {
+  #COOKPM-MODALOVERLAY #COOKPM-MODAL {
+    bottom: 0em;
+    left: 8em;
+    right: 8em;
+  }
+}
+@media (min-width: 1024px) {
+  #COOKPM-MODALOVERLAY #COOKPM-MODAL {
+    bottom: 0em;
+    left: 12em;
+    right: 12em;
+  }
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-x {
+  position: fixed;
+  top: 3em;
+  right: 7em;
+  font-size: 2em;
+  line-height: 0.6;
+  text-decoration: none;
+  transition: top 0.5s;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-x.COOKPM-hidden {
+  top: 100%;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL a {
+  color: inherit;
+  text-decoration: underline;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL h1,
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-policytitle {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL h2 {
+  margin: 2em 0 0 0;
+  font-size: 1.6em;
+  font-weight: normal;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL h3 {
+  margin: 2em 0 0 0;
+  font-size: 1.2em;
+  font-weight: normal;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL #COOKPM-chiudi {
+  position: fixed;
+  bottom: 0em;
+  transition: 0.75s;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.26);
+  left: 0em;
+  right: 0em;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fafafa;
+  padding: 2em;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL #COOKPM-chiudi.COOKPM-hidden {
+  bottom: -100%;
+}
+@media (min-width: 640px) {
+  #COOKPM-MODALOVERLAY #COOKPM-MODAL #COOKPM-chiudi {
+    bottom: 0em;
+    left: 4em;
+    right: 4em;
+  }
+}
+@media (min-width: 800px) {
+  #COOKPM-MODALOVERLAY #COOKPM-MODAL #COOKPM-chiudi {
+    bottom: 0em;
+    left: 8em;
+    right: 8em;
+  }
+}
+@media (min-width: 1024px) {
+  #COOKPM-MODALOVERLAY #COOKPM-MODAL #COOKPM-chiudi {
+    bottom: 0em;
+    left: 12em;
+    right: 12em;
+  }
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL #COOKPM-chiudi button {
+  border-radius: 3px;
+  outline: 0;
+  border: 0;
+  display: inline-block;
+  padding: 0 0.5em;
+  margin: 0.5em 0.7em;
+  line-height: 2.2em;
+  min-height: 2.2em;
+  white-space: nowrap;
+  min-width: 8em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-style: inherit;
+  font-variant: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  color: #fafafa;
+  background-color: #2196F3;
+  float: right;
+  margin: 0 0 0 1em;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-sezione p {
+  margin: 0.5em 0;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-sezione p:last-child {
+  margin-bottom: 0;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-sezione .COOKPM-servizio {
+  margin-top: 1em;
+  padding: 0;
+  font-size: 1em;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-sezione .COOKPM-servizio :last-child {
+  margin-bottom: 0;
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL .COOKPM-sub {
+  /*color: #777;*/
+  /*font-size: 1em;*/
+}
+#COOKPM-MODALOVERLAY #COOKPM-MODAL:after {
+  content: "";
+  display: block;
+  height: 12em;
+  width: 100%;
+}
+#COOKPM-BANNER {
+  background: #333333;
+  color: #fafafa;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 1em 10%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+#COOKPM-BANNER .COOKPM-policytitle {
+  margin: 0 auto 1em auto;
+  position: relative;
+}
+#COOKPM-BANNER .COOKPM-actions {
+  text-align: right;
+  margin: 1em 0 0 0;
+}
+#COOKPM-BANNER .COOKPM-actions button {
+  border-radius: 3px;
+  outline: 0;
+  border: 0;
+  display: inline-block;
+  padding: 0 0.5em;
+  margin: 0.5em 0.7em;
+  line-height: 2.2em;
+  min-height: 2.2em;
+  white-space: nowrap;
+  min-width: 8em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-style: inherit;
+  font-variant: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+#COOKPM-BANNER .COOKPM-actions button.COOKPM-okaction {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fafafa;
+}
+#COOKPM-BANNER .COOKPM-actions button.COOKPM-moreaction {
+  color: #fafafa;
+  background-color: transparent;
+  text-decoration: underline;
+}
+#COOKPM-BANNER .COOKPM-actions button.COOKPM-moreaction:hover,
+#COOKPM-BANNER .COOKPM-actions button.COOKPM-moreaction:focus,
+#COOKPM-BANNER .COOKPM-actions button.COOKPM-moreaction:active {
+  background-color: rgba(158, 158, 158, 0.5);
+  text-decoration: none;
+}
+#COOKPM-BANNER .COOKPM-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5em;
+  line-height: 0.6;
+  color: #fafafa;
+  text-decoration: none;
+}
+#COOKPM-BANNER a {
+  color: #fafafa;
+}
