@@ -171,4 +171,7 @@
 	}
 
 	window.COOKPM = _;
+	document.addEventListener("DOMContentLoaded", function(event) {
+		_.showBanner();
+	});
 })();
