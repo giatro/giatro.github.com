@@ -21,6 +21,7 @@ ul,ol {
 	font-family: $font_family;
 }
 html {
+	height: 100%;
 	font-size: 10px;
 }
 img {
@@ -41,14 +42,16 @@ a {
 	}
 }
 body{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 	margin: 0;
 	padding: 0;
 	font: $font_body_1_device;
-	background: $primary_bg_color;
+	background: $body_bg_color;
 	color: $primary_fg_color;
 	#content {
-		background: $body_bg_color;
-		color: $primary_fg_color;
+		flex: 0 0 auto;
 		padding: $spacing-unit 0;
 		article {
 			&:last-child {
@@ -62,9 +65,10 @@ body{
 		font: $font_body_1;
 	}
 	> header {
-		position: relative;
-		z-index: 20;
+		flex: 0 0 auto;
 		padding: $spacing-unit/2 0;
+		background: $primary_bg_color;
+		color: $primary_fg_color;
 		@media screen and (min-width: $break-large-tablet) {
 			padding: $spacing-unit 0;
 		}
@@ -207,6 +211,7 @@ nav {
 	}	
 }
 footer {
+	flex: 1 0 auto;
 	background: $primary_bg_color;
 	color: $primary_fg_color;
 	padding: $spacing-unit 0;
